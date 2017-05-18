@@ -2,7 +2,7 @@ package graphics.shapes.attributes;
 
 public class SelectionAttributes extends Attributes{
 	
-	public static final String id = "selection";
+	public static final String id = "Select";
 	private boolean selected;
 	
 	public SelectionAttributes(){
