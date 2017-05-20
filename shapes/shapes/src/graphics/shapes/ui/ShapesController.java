@@ -91,10 +91,11 @@ public class ShapesController extends Controller {
 	}
 	public void translateSelected(int x,int y){
 		Iterator<Shape> iter = this.selectedShapes.iterator();
+		SCollection scol = new SCollection();
 		while(iter.hasNext()){
-			Shape shape = iter.next();
-			this.translate(x, y, shape);
+			scol.add(iter.next());	
 		}
+		this.translate(x, y, scol);
 	}
 	public void select(Shape shape){
 		this.selectedShapes.add(shape);
