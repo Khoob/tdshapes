@@ -27,6 +27,7 @@ public class ShapesController extends Controller {
 			}
 		}
 	}
+	@Override
 	public void mouseClicked(MouseEvent e){
 		Shape shape = this.getTarget(e);
 		if (shape != null) {
@@ -48,16 +49,21 @@ public class ShapesController extends Controller {
 		}
 		getView().updateUI();
 	}
-	/*public void mousePressed(MouseEvent e){
+	/*
+	@Override
+	public void mousePressed(MouseEvent e){
 		Shape shape = this.getTarget(e);
 		if (((SelectionAttributes) shape.getAttributes("Select")).isSelected()) {
 			
 		}
 	}*/
 	
-	/*public void mouseReleased(MouseEvent e){
+	/*
+	@Override
+	public void mouseReleased(MouseEvent e){
 		getView().updateUI();
 	}*/
+	@Override
 	public void mouseDragged(MouseEvent e){
 		this.translateSelected(e.getX(), e.getY());
 		getView().updateUI();
@@ -110,7 +116,7 @@ public class ShapesController extends Controller {
 	public boolean isSelected(Shape shape){
 		return ((SelectionAttributes) shape.getAttributes("Select")).isSelected();
 	}
-	
+	@Override
 	public void keypressed(KeyEvent e){
 		System.out.println("merde");
 		 if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -121,6 +127,7 @@ public class ShapesController extends Controller {
              System.out.println("Left");
          }
 	}
+	@Override
 	public void keyreleased(KeyEvent e){
 		this.isShiftDown = e.isShiftDown();
 	}
