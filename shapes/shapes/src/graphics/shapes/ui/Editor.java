@@ -77,6 +77,7 @@ public class Editor extends JFrame
 	{
 		Editor self = new Editor();
 		self.pack();
+		self.sview.requestFocusInWindow();
 		self.setVisible(true);
 	}
 }
