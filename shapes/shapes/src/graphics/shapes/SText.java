@@ -3,7 +3,7 @@ package graphics.shapes;
 import java.awt.Point;
 import java.awt.Rectangle;
 
-//import graphics.shapes.attributes.FontAttributes;
+import graphics.shapes.attributes.FontAttributes;
 
 public class SText extends Shape {
 	
@@ -39,8 +39,9 @@ public class SText extends Shape {
 
 	@Override
 	public Rectangle getBounds() {
-		//FontAttributes font = (FontAttributes) this.getAttributes("Font");
-		Rectangle rect = new Rectangle(this.loc.x,this.loc.y - 10,30,10); // besion de trouver le rect definit par le text
+		FontAttributes font = (FontAttributes) this.getAttributes("Font");
+		Rectangle rect = font.getBounds(this.text);
+		rect.translate((int) this.loc.getX() - 1, (int) this.loc.getY() - rect.height + 2);
 		return rect.getBounds();
 	}
 
