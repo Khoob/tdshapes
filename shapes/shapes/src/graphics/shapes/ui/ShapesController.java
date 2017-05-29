@@ -29,14 +29,7 @@ public class ShapesController extends Controller {
 				System.out.println(this.selectedShapes.toString());
 			}
 		}
-		/*KeyboardFocusManager kfm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-		kfm.addKeyEventDispatcher(new KeyEventDispatcher(){
-		      @Override
-		      public boolean dispatchKeyEvent(KeyEvent e) {
-		        System.out.println("Got key event!");
-		        return false;
-		      }}
-		      );*/
+		
 	}
 	@Override
 	public void mouseClicked(MouseEvent e){
