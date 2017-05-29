@@ -10,7 +10,10 @@ import graphics.shapes.attributes.SelectionAttributes;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.Point;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 
@@ -22,7 +25,6 @@ public class Editor extends JFrame
 	public Editor()
 	{	
 		super("Shapes Editor");
-
 		this.addWindowListener(new java.awt.event.WindowAdapter()
 		{
 			public void windowClosing(java.awt.event.WindowEvent evt)
@@ -32,7 +34,6 @@ public class Editor extends JFrame
 		});
 		
 		this.buildModel();
-		
 		this.sview = new ShapesView(this.model);
 		this.sview.setPreferredSize(new Dimension(300,300));
 		this.getContentPane().add(this.sview, java.awt.BorderLayout.CENTER);
@@ -54,7 +55,7 @@ public class Editor extends JFrame
 		c.addAttributes(new SelectionAttributes(true));
 		this.model.add(c);
 		
-		SText t= new SText(new Point(100,100),"hello");
+		SText t= new SText(new Point(100,100),"salutation voyageur");
 		t.addAttributes(new ColorAttributes(true,true,Color.YELLOW,Color.BLUE));
 		t.addAttributes(new FontAttributes());
 		t.addAttributes(new SelectionAttributes());
